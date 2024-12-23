@@ -1,6 +1,8 @@
 
 import pandas as pd
 
+### Processing Input Data ###
+
 tempData = open("Day1Input.txt","r")
 raw = tempData.read().split("\n")[:-1]
 tempData.close()
