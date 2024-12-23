@@ -12,9 +12,8 @@ def check_safe(report: list):
     return increasing or decreasing
 
 # Parsing input data
-tempData = open("Day2Input.txt","r")
-reports = tempData.read().split("\n")[:-1]
-tempData.close()
+with open("Day2Input.txt","r") as file:
+    reports = file.read().split("\n")[:-1]
 
 # Looping through reports
 num_safe = 0

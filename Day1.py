@@ -3,9 +3,8 @@ import pandas as pd
 
 ### Processing Input Data ###
 
-tempData = open("Day1Input.txt","r")
-raw = tempData.read().split("\n")[:-1]
-tempData.close()
+with open("Day1Input.txt","r") as file:
+    raw = file.read().split("\n")[:-1]
 
 id1 = sorted([int(val.split()[0]) for val in raw])
 id2 = sorted([int(val.split()[-1]) for val in raw])
