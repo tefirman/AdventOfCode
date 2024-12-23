@@ -8,15 +8,19 @@ def parse_mul(mul):
 with open("Day3Input.txt", "r") as file:
     corrupted = file.read()
 
-# do_ind = 0
-# while do_ind >= 0:
-#     print("foo bar")
+do_ind = 0
+dont_ind = 0
+filtered = ""
+while do_ind >= 0:
+    dont_ind = corrupted.find("don't()",do_ind)
+    filtered += corrupted[do_ind:dont_ind]
+    do_ind = corrupted.find("do()",dont_ind)    
 
 pattern = r'mul\([1-9][0-9]{0,2},[1-9][0-9]{0,2}\)'
 
 num_valid = 0
 product = 0
-matches = re.finditer(pattern, corrupted)
+matches = re.finditer(pattern, filtered)
 for match in matches:
     start, end = match.span()
     num_valid += 1
